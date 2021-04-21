@@ -21,8 +21,8 @@ function App() {
     if (e.charCode === 13) {
       const city = e.target.value;
       getCurrentWeather(city).then((response) => {
-        console.warn(response);
-        setWeatherArray((prevState) => prevState);
+        weatherArray.push(response);
+        setWeatherArray(weatherArray);
       });
       e.preventDefault();
     }
