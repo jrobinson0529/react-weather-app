@@ -1,8 +1,15 @@
+@import '../styles/variables';
+
 .App {
+  background-color: $background;
   padding: 15px 20px;
   text-align: center;
 }
 .weather-card {
+  border: 2px solid white;
+  border-radius: 10px;
+  box-shadow: grey 0 0 15px;
+  color: $cardFontColor;
   height: 15rem;
   margin: 10px;
   background-position: top;
@@ -17,4 +24,20 @@
   .card-body {
     padding: 5px;
   }
+}
+.form-container {
+  padding: 20px;
+  border: 2px solid white;
+  border-radius: 10px;
+  margin-top: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+.header-text {
+  margin-top: 6%;
+  margin-bottom: 8%;
+  font-size: 64px;
+  padding: 10px;
+  height: 2em;
 }
