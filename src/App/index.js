@@ -15,7 +15,8 @@ function App() {
       const city = e.target.value;
       getCurrentWeather(city).then((response) => {
         weatherArray.push(response);
-        setWeatherArray(weatherArray);
+        setWeatherArray([...weatherArray]);
+        console.warn([...weatherArray]);
       });
     }
   };

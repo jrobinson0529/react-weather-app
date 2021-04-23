@@ -4,20 +4,20 @@ import { PropTypes } from 'prop-types';
 
 import {
   Card, CardText, CardBody,
-  CardTitle, CardSubtitle
+  CardTitle,
 } from 'reactstrap';
 
 const WeatherCard = (props) => {
   return (
 <div className='weather-card-container d-flex flex-wrap'>
-      {props.weatherArray.map((obj, i) => <Card key={i}>
+      {props.weatherArray.map((obj, i) => <Card key={i} className='w-25 weather-card' style={{
+        backgroundImage: `url(http://openweathermap.org/img/wn/${obj.weather[0].icon}@2x.png)`,
+      }}>
         <CardBody>
-          <CardTitle tag="h5"></CardTitle>
-          <CardSubtitle tag="h6" className="mb-2 text-muted">{obj.name}</CardSubtitle>
-        </CardBody>
-        <img width="100%" src="/assets/318x180.svg" alt="Card image cap" />
-        <CardBody>
-          <CardText>Some quick example text to build on the card title and make up the bulk of the card&apos;s content.</CardText>
+          <CardTitle tag="h5">{obj.name}</CardTitle>
+        </CardBody >
+        <CardBody >
+          <CardText>It is currently {obj.weather[0].description}</CardText>
         </CardBody>
       </Card>)}
 </div>
