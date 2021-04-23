@@ -14,10 +14,10 @@ const WeatherCard = (props) => {
         backgroundImage: `url(http://openweathermap.org/img/wn/${obj.weather[0].icon}@2x.png)`,
       }}>
         <CardBody>
-          <CardTitle tag="h5">{obj.name}</CardTitle>
+          <CardTitle tag="h3">{obj.name}</CardTitle>
         </CardBody >
         <CardBody >
-          <CardText>It is currently {obj.weather[0].description}</CardText>
+          <CardText>It is currently {obj.weather[0].description} and {obj.main.temp}F</CardText>
         </CardBody>
       </Card>)}
 </div>
