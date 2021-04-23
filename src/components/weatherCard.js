@@ -7,25 +7,24 @@ import {
   CardTitle, CardSubtitle
 } from 'reactstrap';
 
-function WeatherCard(props) {
+const WeatherCard = (props) => {
   return (
-    <div className='w-25 m-3'>
-      <Card >
+<div className='weather-card-container d-flex flex-wrap'>
+      {props.weatherArray.map((obj, i) => <Card key={i}>
         <CardBody>
-          <CardTitle tag="h5">{props.name}</CardTitle>
-          <CardSubtitle tag="h6" className="mb-2 text-muted">{props.temp}</CardSubtitle>
+          <CardTitle tag="h5"></CardTitle>
+          <CardSubtitle tag="h6" className="mb-2 text-muted">{obj.name}</CardSubtitle>
         </CardBody>
         <img width="100%" src="/assets/318x180.svg" alt="Card image cap" />
         <CardBody>
           <CardText>Some quick example text to build on the card title and make up the bulk of the card&apos;s content.</CardText>
         </CardBody>
-      </Card>
-    </div>
+      </Card>)}
+</div>
   );
-}
+};
 WeatherCard.propTypes = {
-  name: PropTypes.string,
-  temp: PropTypes.number
+  weatherArray: PropTypes.array
 };
 
 export default WeatherCard;
